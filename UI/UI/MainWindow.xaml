@@ -5,41 +5,51 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="800" Width="1100"
         xmlns:prism="http://prismlibrary.com/" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:i1="http://schemas.microsoft.com/expression/2010/interactions" xmlns:i2="http://schemas.microsoft.com/xaml/behaviors"
         prism:ViewModelLocator.AutoWireViewModel="True"
         >
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="40"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <StackPanel>
-            <ListView Foreground="#FF313131" FontFamily="Champagne &amp; Limousines" FontSize="18" ScrollViewer.HorizontalScrollBarVisibility="Disabled" x:Name="Menu">
-                <ListViewItem Height="45" Padding="0" >
-                    <materialDesign:PackIcon Kind="Recycle" Width="20" Height="20" Foreground="Gray" Margin="10 0" VerticalAlignment="Center">
-                    </materialDesign:PackIcon>
-                </ListViewItem>
-                <ListViewItem Height="45" Padding="0" >
-                    <materialDesign:PackIcon Kind="HelpCircleOutline" Width="20" Height="20" Foreground="#FFF08033" Margin="10 0" VerticalAlignment="Center"/>
-                </ListViewItem>
-                <ListViewItem Height="45" Padding="0">
-                    <materialDesign:PackIcon Kind="Lightbulb" Width="20" Height="20" Foreground="Green" Margin="10" VerticalAlignment="Center"/>
-                </ListViewItem>
-                <ListViewItem Height="45" Padding="0">
-                    <materialDesign:PackIcon Kind="Heart" Width="20" Height="20" Foreground="#FFD41515" Margin="10" VerticalAlignment="Center"/>
-                </ListViewItem>
-                <ListViewItem Height="45" Padding="0">
-                    <materialDesign:PackIcon Kind="StarCircle" Width="20" Height="20" Foreground="#FFE6A701" Margin="10" VerticalAlignment="Center"/>
-                </ListViewItem>
-                <ListViewItem Height="45" Padding="0">
-                    <materialDesign:PackIcon Kind="Settings" Width="20" Height="20" Foreground="#FF0069C1" Margin="10" VerticalAlignment="Center"/>
-                </ListViewItem>
-            </ListView>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+            <TextBlock Text="Logo" Height="30" Width="30"></TextBlock>
+            <TextBlock Text="武汉黄山广场便利店" Height="30" Margin="10,0,0,0"></TextBlock>
         </StackPanel>
-        <Grid Grid.Column="1">
-            <ContentPresenter  Content="{Binding UserContent}"/>
-            <!--使用内容呈现器来显示用户控件界面-->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <ListView Foreground="#FF313131" FontFamily="Champagne &amp; Limousines" FontSize="18" ScrollViewer.HorizontalScrollBarVisibility="Disabled" x:Name="Menu">
+                    <ListViewItem Height="50" Padding="0" >
+                        <materialDesign:PackIcon Kind="Recycle" Width="30" Height="30" Foreground="Gray" Margin="10" VerticalAlignment="Center">
+                        </materialDesign:PackIcon>
+                    </ListViewItem>
+                    <ListViewItem Height="50" Padding="0" >
+                        <materialDesign:PackIcon Kind="HelpCircleOutline" Width="30" Height="30" Foreground="#FFF08033" Margin="10" VerticalAlignment="Center"/>
+                    </ListViewItem>
+                    <ListViewItem Height="50" Padding="0">
+                        <materialDesign:PackIcon Kind="Lightbulb" Width="30" Height="30" Foreground="Green" Margin="10" VerticalAlignment="Center"/>
+                    </ListViewItem>
+                    <ListViewItem Height="50" Padding="0">
+                        <materialDesign:PackIcon Kind="Heart" Width="30" Height="30" Foreground="#FFD41515" Margin="10" VerticalAlignment="Center"/>
+                    </ListViewItem>
+                    <ListViewItem Height="50" Padding="0">
+                        <materialDesign:PackIcon Kind="StarCircle" Width="30" Height="30" Foreground="#FFE6A701" Margin="10" VerticalAlignment="Center"/>
+                    </ListViewItem>
+                    <ListViewItem Height="50" Padding="0">
+                        <materialDesign:PackIcon Kind="Settings" Width="30" Height="30" Foreground="#FF0069C1" Margin="10" VerticalAlignment="Center"/>
+                    </ListViewItem>
+                </ListView>
+            </StackPanel>
+            <Grid Grid.Column="1">
+                <ContentPresenter  Content="{Binding UserContent}" Margin="-10,-10,10.333,9.667"/>
+                <!--使用内容呈现器来显示用户控件界面-->
+            </Grid>
         </Grid>
     </Grid>
 
