@@ -1,5 +1,6 @@
 ﻿using Prism.DryIoc;
 using Prism.Ioc;
+using Prism.Modularity;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -7,6 +8,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using UI.Views;
 
 namespace UI
 {
@@ -22,7 +24,10 @@ namespace UI
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            //在其中添加依赖注入的实现类
+            containerRegistry.RegisterForNavigation<CashRegisterUserControl>();
+            containerRegistry.RegisterForNavigation<CommodityUserControl>();
         }
+
+        
     }
 }
